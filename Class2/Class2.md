@@ -304,10 +304,10 @@ Nos dados económicos existem 3 dimensões:
 -   **Entidades** (*i* = 1, ...*n*) - Indivíduos, empresas, países, etc.
 
 -   **Variáveis**
-    (*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, *x*<sub>*j*</sub>) -
+    (*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, ..., *x*<sub>*j*</sub>) -
     PIB, inflação, desemprego, etc.
 
--   **Periodos de tempo** (*t* = 1, ...*T*) - Anos, trimestres, meses,
+-   **Periodos de tempo** (*t* = 1, ..., *T*) - Anos, trimestres, meses,
     etc.
 
 ### Dados seccionais
@@ -460,7 +460,7 @@ Exemplo:
 
 # Exercício
 
-1.  Contrua um painel de dados com as seguintes características:
+*1. Contrua um painel de dados com as seguintes características:*
 
 -   Fonte: WDI
 -   <u>4 países:</u> Portugal, Espanha, França e Grécia
@@ -469,8 +469,8 @@ Exemplo:
     `Exports of goods and services (constant LCU)`
 -   <u>Frequência:</u> anual
 
-1.  Contruir um conjunto de dados em formato de Séries Temporais com as
-    seguintes características:
+*2. Contruir um conjunto de dados em formato de Séries Temporais com as
+seguintes características:*
 
 -   <u>Fonte</u>: Eurostat
 -   <u>Variável</u>:
