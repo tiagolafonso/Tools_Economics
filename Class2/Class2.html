@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tiago Afonso">
+<meta name="dcterms.date" content="2025-02-25">
+
+<title>Ferramente de Apoio à Economia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Class2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Class2_files/libs/quarto-html/quarto.js"></script>
+<script src="Class2_files/libs/quarto-html/popper.min.js"></script>
+<script src="Class2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Class2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Class2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Class2_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Class2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Class2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Class2_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Class2_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="Class2_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="Class2_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#consideraçãoes-sobre-a-recolhas-de-dados" id="toc-consideraçãoes-sobre-a-recolhas-de-dados" class="nav-link active" data-scroll-target="#consideraçãoes-sobre-a-recolhas-de-dados">Consideraçãoes sobre a recolhas de dados</a>
+  <ul class="collapse">
+  <li><a href="#selecionar-o-tipo-de-dados-correto" id="toc-selecionar-o-tipo-de-dados-correto" class="nav-link" data-scroll-target="#selecionar-o-tipo-de-dados-correto">1. Selecionar o tipo de dados correto</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-dados" id="toc-tipos-de-dados" class="nav-link" data-scroll-target="#tipos-de-dados">Tipos de dados</a></li>
+  <li><a href="#formato-dos-dados" id="toc-formato-dos-dados" class="nav-link" data-scroll-target="#formato-dos-dados">Formato dos dados</a></li>
+  </ul></li>
+  <li><a href="#determinar-o-período-de-tempo" id="toc-determinar-o-período-de-tempo" class="nav-link" data-scroll-target="#determinar-o-período-de-tempo">2. Determinar o período de tempo</a></li>
+  <li><a href="#recolher-dados" id="toc-recolher-dados" class="nav-link" data-scroll-target="#recolher-dados">3. Recolher dados</a></li>
+  </ul></li>
+  <li><a href="#estrutura-de-dados" id="toc-estrutura-de-dados" class="nav-link" data-scroll-target="#estrutura-de-dados">Estrutura de dados</a>
+  <ul class="collapse">
+  <li><a href="#dados-em-formato-largo-wide-data" id="toc-dados-em-formato-largo-wide-data" class="nav-link" data-scroll-target="#dados-em-formato-largo-wide-data">1. Dados em formato largo (<em>wide data</em>)</a></li>
+  <li><a href="#dados-em-formato-longo-long-data" id="toc-dados-em-formato-longo-long-data" class="nav-link" data-scroll-target="#dados-em-formato-longo-long-data">2. Dados em formato longo (<em>long data</em>)</a></li>
+  <li><a href="#estrutura-de-dados-económicos" id="toc-estrutura-de-dados-económicos" class="nav-link" data-scroll-target="#estrutura-de-dados-económicos">3. Estrutura de dados Económicos</a>
+  <ul class="collapse">
+  <li><a href="#dados-seccionais" id="toc-dados-seccionais" class="nav-link" data-scroll-target="#dados-seccionais">Dados seccionais</a></li>
+  <li><a href="#séries-temporais" id="toc-séries-temporais" class="nav-link" data-scroll-target="#séries-temporais">Séries Temporais</a></li>
+  <li><a href="#dados-em-painel" id="toc-dados-em-painel" class="nav-link" data-scroll-target="#dados-em-painel">Dados em painel</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ferramente de Apoio à Economia</h1>
+<p class="subtitle lead">Aula 2 - Recolher e Preparar dados</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tiago Afonso </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 25, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="consideraçãoes-sobre-a-recolhas-de-dados" class="level1">
+<h1>Consideraçãoes sobre a recolhas de dados</h1>
+<p>O seguite diagrama ilustra o processo de recolha de dados e as decisões a tomar em cada etapa.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[1. Selecionar o tipo de dados correto] --&gt; B[2. Determinar o período de tempo]
+    B --&gt;|Recolher novos dados?| C[3.1 Decidir como os dados serão recolhidos]
+    B --&gt;|Utilizar dados existentes?| D[3.2 Escolher fontes de dados]
+    C --&gt; E[4.1 Decidir quantos dados a recolher]
+    D --&gt; F[4.2 Decidir quais dados utilizar]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="selecionar-o-tipo-de-dados-correto" class="level2">
+<h2 class="anchored" data-anchor-id="selecionar-o-tipo-de-dados-correto">1. Selecionar o tipo de dados correto</h2>
+<section id="tipos-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-dados">Tipos de dados</h3>
+<ul>
+<li><p><strong>Dados Qualitativos</strong> Não podem ser medidos, ou facilmente convertidos em números. Normalmente são listados como <em>Nomes</em>, <em>Descrições</em> ou <em>Categorias</em>.</p>
+<ul>
+<li><p><strong>Ordenados</strong> São dados que podem ser ordenados ou classificados numa escala. Por exemplo, a classificação de um filme ou a posição de um atleta numa corrida.</p></li>
+<li><p><strong>Nominais</strong> São dados que podem ser categorizados sem uma ordem. Por exemplo, a cor de um carro.</p></li>
+</ul></li>
+<li><p><strong>Dados Quantitativos</strong> Podem ser medidos e expressos em números. Representam <em>quantidades</em>, <em>medidas</em> ou <em>intervalos</em>.</p>
+<ul>
+<li><p><strong>Discretos</strong> São dados que podem ser contados e que têm um número finito de valores possíveis. Por exemplo, o número de alunos numa sala de aula ou o número de carros numa rua. Não existe 1,5 carros.</p></li>
+<li><p><strong>Contínuos</strong> São dados que podem ser medidos e que têm um número infinito de valores possíveis. Por exemplo, a altura de uma pessoa ou a velocidade de um carro. Existe 1,5111111 metros de altura.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="formato-dos-dados" class="level3">
+<h3 class="anchored" data-anchor-id="formato-dos-dados">Formato dos dados</h3>
+<ul>
+<li><p><strong>Dados Tabulares/estruturadps</strong> São dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa um atributo.</p></li>
+<li><p><strong>Dados Não-estruturados</strong> São dados que não estão organizados numa estrutura específica. Por exemplo, texto, imagens, vídeos, áudio, etc.</p></li>
+</ul>
+</section>
+</section>
+<section id="determinar-o-período-de-tempo" class="level2">
+<h2 class="anchored" data-anchor-id="determinar-o-período-de-tempo">2. Determinar o período de tempo</h2>
+<p>Para determinar o período de tempo, é importante considerar:</p>
+<ul>
+<li><p><strong>Frequência de atualização</strong> - Com que frequência os dados são atualizados? Anualmente, mensalmente, diariamente, intradiariamente, etc.</p></li>
+<li><p><strong>Granularidade dos dados</strong> - Qual é a unidade de tempo dos dados? Segundos, minutos, horas, dias, semanas, meses, anos, etc.</p></li>
+<li><p><strong>Horizonte temporal</strong> - Qual é o horizonte temporal dos dados? 2000-2020, 2010-2020, 2020-2025, etc.</p></li>
+</ul>
+<p>Tendo em a periodicidade dos dados, podemos dividir os dados em duas categorias:</p>
+<ul>
+<li><p><strong>Dados Estáticos</strong> - Dados que não mudam ao longo do tempo. Por exemplo, <em>inqueritos de satisfação</em>, <em>listas de clientes</em>, <em>listas de produtos</em>, etc.</p></li>
+<li><p><strong>Dados dinâmicos/Séries Temporais</strong> - Dados que mudam ao longo do tempo. Por exemplo, <em>vendas diárias</em>, <em>temperatura diária</em>, <em>preço das ações</em>, etc.</p></li>
+</ul>
+</section>
+<section id="recolher-dados" class="level2">
+<h2 class="anchored" data-anchor-id="recolher-dados">3. Recolher dados</h2>
+<p>Considerando a recolha de dados, podemos dividir o processo em dois tipos:</p>
+<ul>
+<li><p><strong>Dados primários</strong> - Dados recolhidos diretamente pelo investigador para um propósito específico. Por exemplo, <em>inquéritos</em>, <em>entrevistas</em>, etc.</p>
+<ul>
+<li>Vantagens:
+<ul>
+<li>Controlo total sobre a recolha de dados.</li>
+<li>Dados específicos para o propósito do estudo.</li>
+</ul></li>
+<li>Desvantagens:
+<ul>
+<li>Custo e tempo associados à recolha de dados.</li>
+<li>Possibilidade de enviesamento dos dados.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>O enviesamnto dos dados ou da amostra é um problema comum na recolha de dados primários. Pode ocorrer quando a amostra não é representativa da população ou quando os dados são recolhidos de forma tendenciosa (para obter um determindado resultado). Por exemplo: <em>amostra de conveniência</em>, <em>amostra de voluntários</em>, <em>amostra de amigos</em>, etc.</p>
+<ul>
+<li><p><strong>Dados secundários</strong> - Dados que já foram recolhidos por outra pessoa ou organização para um propósito diferente. Por exemplo, <em>bases de dados públicas</em>, <em>relatórios de mercado</em>, <em>estudos científicostida</em>, etc.</p>
+<ul>
+<li>Vantagens:
+<ul>
+<li>Custo e tempo reduzidos na recolha de dados.</li>
+<li>Dados de fontes credíveis e confiáveis.</li>
+<li>Possibilidade de comparação com outros estudos.</li>
+<li>garantia de metodologia adequada na recolha de dados.</li>
+</ul></li>
+<li>Desvantagens:
+<ul>
+<li>Dados podem não ser específicos para o propósito do estudo.</li>
+<li>Dados podem estar desatualizados ou incompletos.</li>
+<li>Dados podem não estar disponíveis para o período de tempo desejado.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Quando recorremos a dados secundários, é importante avaliar a qualidade dos dados e a credibilidade da fonte. Por exemplo, verificar a metodologia de recolha de dados, a representatividade da amostra a fiabilidade dos dados.</p>
+<p><em>Exemplos de fontes de dados secundários utilziados em economia:</em></p>
+<p><a href="https://databank.worldbank.org/source/world-development-indicators">WDI</a>- World Development Indicators</p>
+<p><a href="https://www.imf.org/en/Data">IMF</a>- International Monetary Fund</p>
+<p><a href="https://www.oecd.org/en/data.html">OECD</a>- Organisation for Economic Co-operation and Development</p>
+<p><a href="https://ec.europa.eu/eurostat">Eurostat</a>- Statistical Office of the European Union</p>
+<p><a href="https://bpstat.bportugal.pt/">BP</a>- Banco de Portugal</p>
+<p><a href="https://www.ine.pt/">INE</a>- Instituto Nacional de Estatística</p>
+<p><a href="https://www.pordata.pt/pt">PORDATA</a>- Base de Dados Portugal</p>
+<p><em>Outras bases de dados</em></p>
+<p><a href="https://www.kaggle.com/datasets">Kaggle</a>- Kaggle Datasets</p>
+<p><a href="https://archive.ics.uci.edu/ml/index.php">UCI Machine Learning Repository</a>- UCI Machine Learning Repository</p>
+<p><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a>- Google Dataset Search</p>
+</section>
+</section>
+<section id="estrutura-de-dados" class="level1">
+<h1>Estrutura de dados</h1>
+<p>Os dados podem estar ogranizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. As duas formas mais comuns de organizar os dados são:</p>
+<section id="dados-em-formato-largo-wide-data" class="level2">
+<h2 class="anchored" data-anchor-id="dados-em-formato-largo-wide-data">1. Dados em formato largo (<em>wide data</em>)</h2>
+<p>Os dados em formato largo são organizados de forma a que cada linha represente uma observação e cada coluna represente uma variável. Este formato é mais comum em bases de dados tabulares e é mais fácil de ler e interpretar.</p>
+<p>Por exemplo, considere a seguinte tabela com dados de vendas de produtos:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Produto A</th>
+<th>Produto B</th>
+<th>Produto C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025-01-01</td>
+<td>100</td>
+<td>200</td>
+<td>150</td>
+</tr>
+<tr class="even">
+<td>2025-01-02</td>
+<td>120</td>
+<td>180</td>
+<td>160</td>
+</tr>
+<tr class="odd">
+<td>2025-01-03</td>
+<td>130</td>
+<td>190</td>
+<td>170</td>
+</tr>
+</tbody>
+</table>
+<p>Neste formato, cada linha representa uma data e cada coluna representa um produto. Este formato é útil para análises que envolvem comparações entre produtos ou ao longo do tempo.</p>
+</section>
+<section id="dados-em-formato-longo-long-data" class="level2">
+<h2 class="anchored" data-anchor-id="dados-em-formato-longo-long-data">2. Dados em formato longo (<em>long data</em>)</h2>
+<p>Os dados em formato longo são organizados de forma a que cada linha represente uma observação única. Este formato é mais comum em análises estatísticas e é mais eficiente para armazenar grandes volumes de dados.</p>
+<p>Por exemplo, considere a seguinte tabela com os mesmos dados de vendas de produtos, mas em formato longo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Produto</th>
+<th>Vendas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025-01-01</td>
+<td>A</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>2025-01-01</td>
+<td>B</td>
+<td>200</td>
+</tr>
+<tr class="odd">
+<td>2025-01-01</td>
+<td>C</td>
+<td>150</td>
+</tr>
+<tr class="even">
+<td>2025-01-02</td>
+<td>A</td>
+<td>120</td>
+</tr>
+<tr class="odd">
+<td>2025-01-02</td>
+<td>B</td>
+<td>180</td>
+</tr>
+<tr class="even">
+<td>2025-01-02</td>
+<td>C</td>
+<td>160</td>
+</tr>
+<tr class="odd">
+<td>2025-01-03</td>
+<td>A</td>
+<td>130</td>
+</tr>
+<tr class="even">
+<td>2025-01-03</td>
+<td>B</td>
+<td>190</td>
+</tr>
+<tr class="odd">
+<td>2025-01-03</td>
+<td>C</td>
+<td>170</td>
+</tr>
+</tbody>
+</table>
+<p>Neste formato, cada linha representa uma venda de um produto numa determinada data. Este formato é útil para análises estatísticas que envolvem a comparação de diferentes produtos ou datas.</p>
+</section>
+<section id="estrutura-de-dados-económicos" class="level2">
+<h2 class="anchored" data-anchor-id="estrutura-de-dados-económicos">3. Estrutura de dados Económicos</h2>
+<p>Na área da economia, os dados podem ser organizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. Por exemplo, os dados macroeconómicos são normalmente organizados em séries temporais, onde cada linha representa uma observação ao longo do tempo.</p>
+<p>Nos dados económicos existem 3 dimensões:</p>
+<ul>
+<li><p><strong>Entidades</strong> (<span class="math inline">\(i=1,...n\)</span>) - Indivíduos, empresas, países, etc.</p></li>
+<li><p><strong>Variáveis</strong> (<span class="math inline">\(x_1,x_2, x_3, x_j\)</span>) - PIB, inflação, desemprego, etc.</p></li>
+<li><p><strong>Periodos de tempo</strong> (<span class="math inline">\(t=1,...T\)</span>) - Anos, trimestres, meses, etc.</p></li>
+</ul>
+<section id="dados-seccionais" class="level3">
+<h3 class="anchored" data-anchor-id="dados-seccionais">Dados seccionais</h3>
+<p>Várias entidades (<span class="math inline">\(i=1,...n\)</span>), varias variáveis (<span class="math inline">\(x_1,x_2, x_3, x_j\)</span>) e um periodo de tempo (<span class="math inline">\(t=1\)</span>)</p>
+<p>Os <em>dados seccionais</em> são dados recolhidos numa determinada altura e referem-se a uma amostra de indivíduos, empresas, países, etc. Por exemplo, um inquérito de satisfação aos clientes de um supermercado num determinado dia/mês. Exemplo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Cliente</th>
+<th>Idade</th>
+<th>Sexo</th>
+<th>Profissão</th>
+<th>Rendimento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>25</td>
+<td>M</td>
+<td>Estudante</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>35</td>
+<td>F</td>
+<td>Empresária</td>
+<td>2000</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>45</td>
+<td>M</td>
+<td>Médico</td>
+<td>3000</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="séries-temporais" class="level3">
+<h3 class="anchored" data-anchor-id="séries-temporais">Séries Temporais</h3>
+<p>Uma entidade (<span class="math inline">\(i=1\)</span>), várias variáveis (<span class="math inline">\(x_1, x_2, x_3, x_j\)</span>) e vários periodos de tempo (<span class="math inline">\(t=1,...T\)</span>)</p>
+<p>As <em>séries temporais</em> são dados recolhidos ao longo do tempo e referem-se a uma unidade (indivíduo, empresa, país, etc.). Por exemplo, o histórico de vendas de uma empresa ao longo de vários anos.</p>
+<p>Exemplo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ano</th>
+<th>PIB</th>
+<th>POP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2022</td>
+<td>1000</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2023</td>
+<td>1100</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>2024</td>
+<td>1200</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dados-em-painel" class="level3">
+<h3 class="anchored" data-anchor-id="dados-em-painel">Dados em painel</h3>
+<p>Várias entidades (<span class="math inline">\(i=1,...n\)</span>), várias variáveis (<span class="math inline">\(x_1,x_2, x_3,x_j\)</span>) e vários periodos de tempo (<span class="math inline">\(t=1,...T\)</span>)</p>
+<p>Os <em>dados em painel</em> combinam as características dos dados seccionais e longitudinais, ou seja, são dados recolhidos ao longo do tempo e referem-se a uma amostra de indivíduos, empresas, países, etc. Por exemplo, o histórico de vendas de várias empresas ao longo de vários anos.</p>
+<p>Exemplo:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>País</th>
+<th>Ano</th>
+<th>PIB</th>
+<th>POP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Portugal</td>
+<td>2022</td>
+<td>1000</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Portugal</td>
+<td>2023</td>
+<td>1100</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>Portugal</td>
+<td>2024</td>
+<td>1200</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>Espanha</td>
+<td>2022</td>
+<td>2000</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Espanha</td>
+<td>2023</td>
+<td>2100</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>Espanha</td>
+<td>2024</td>
+<td>2200</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<p>wf</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
