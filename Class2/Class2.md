@@ -460,7 +460,7 @@ Exemplo:
 
 # Exercício
 
-*1. Contrua um painel de dados com as seguintes características:*
+**1. Contrua um painel de dados com as seguintes características:**
 
 -   Fonte: WDI
 -   <u>4 países:</u> Portugal, Espanha, França e Grécia
@@ -469,8 +469,8 @@ Exemplo:
     `Exports of goods and services (constant LCU)`
 -   <u>Frequência:</u> anual
 
-*2. Contruir um conjunto de dados em formato de Séries Temporais com as
-seguintes características:*
+**2. Contruir um conjunto de dados em formato de Séries Temporais com as
+seguintes características:**
 
 -   <u>Fonte</u>: Eurostat
 -   <u>Variável</u>:
