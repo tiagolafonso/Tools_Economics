@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tiago Afonso">
+
+<title>Ferramentas de Apoio à Economia - Aula 1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Aula1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aula1_files/libs/quarto-html/quarto.js"></script>
+<script src="Aula1_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aula1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Aula1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Aula1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aula1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Aula1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Aula1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Aula1_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Aula1_files/libs/quarto-diagram/mermaid.min.js"></script>
+<script src="Aula1_files/libs/quarto-diagram/mermaid-init.js"></script>
+<link href="Aula1_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#aula-1" id="toc-aula-1" class="nav-link active" data-scroll-target="#aula-1">Aula 1</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-da-aula" id="toc-objetivos-da-aula" class="nav-link" data-scroll-target="#objetivos-da-aula">Objetivos da Aula</a></li>
+  <li><a href="#método-de-análise-de-dados" id="toc-método-de-análise-de-dados" class="nav-link" data-scroll-target="#método-de-análise-de-dados">1. Método de Análise de Dados</a></li>
+  <li><a href="#dados-em-economia" id="toc-dados-em-economia" class="nav-link" data-scroll-target="#dados-em-economia">2 Dados em Economia</a></li>
+  <li><a href="#extensões-de-ficheiros-de-dados" id="toc-extensões-de-ficheiros-de-dados" class="nav-link" data-scroll-target="#extensões-de-ficheiros-de-dados">3 Extensões de ficheiros de dados</a></li>
+  <li><a href="#nomes-de-ficheiros" id="toc-nomes-de-ficheiros" class="nav-link" data-scroll-target="#nomes-de-ficheiros">4 Nomes de Ficheiros</a>
+  <ul class="collapse">
+  <li><a href="#exemplos-de-nomes-adequados-para-ficheiros" id="toc-exemplos-de-nomes-adequados-para-ficheiros" class="nav-link" data-scroll-target="#exemplos-de-nomes-adequados-para-ficheiros"><em>Exemplos de Nomes adequados para ´Ficheiros`</em></a></li>
+  </ul></li>
+  <li><a href="#como-fazer-perguntas-orientadas-a-dados" id="toc-como-fazer-perguntas-orientadas-a-dados" class="nav-link" data-scroll-target="#como-fazer-perguntas-orientadas-a-dados">5 Como Fazer Perguntas Orientadas a Dados</a></li>
+  <li><a href="#diagnóstico-do-excel" id="toc-diagnóstico-do-excel" class="nav-link" data-scroll-target="#diagnóstico-do-excel">6 Diagnóstico do Excel</a>
+  <ul class="collapse">
+  <li><a href="#instalar-excel-apenas-para-computador-pessoal" id="toc-instalar-excel-apenas-para-computador-pessoal" class="nav-link" data-scroll-target="#instalar-excel-apenas-para-computador-pessoal">6.1. Instalar Excel (apenas para computador pessoal)</a></li>
+  <li><a href="#funções-básicas-do-excel" id="toc-funções-básicas-do-excel" class="nav-link" data-scroll-target="#funções-básicas-do-excel">6.2. Funções Básicas do Excel</a></li>
+  <li><a href="#alguns-atalhos-do-teclado" id="toc-alguns-atalhos-do-teclado" class="nav-link" data-scroll-target="#alguns-atalhos-do-teclado">6.3. Alguns atalhos do teclado</a></li>
+  </ul></li>
+  <li><a href="#agluns-cáculos-com-dados-económicos" id="toc-agluns-cáculos-com-dados-económicos" class="nav-link" data-scroll-target="#agluns-cáculos-com-dados-económicos">7. Agluns cáculos com dados económicos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ferramentas de Apoio à Economia - Aula 1</h1>
+<p class="subtitle lead">Introdução à Análise de Dados Económicos</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tiago Afonso </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="aula-1" class="level1">
+<h1>Aula 1</h1>
+<section id="objetivos-da-aula" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-da-aula">Objetivos da Aula</h2>
+<ul>
+<li>Compreender a importância das ferramentas de apoio na economia.</li>
+<li>Identificar as principais ferramentas utilizadas.</li>
+</ul>
+</section>
+<section id="método-de-análise-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="método-de-análise-de-dados">1. Método de Análise de Dados</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    A(Formular o Problema) --&gt; B(Recolher Dados)
+    B --&gt; C(Limpar)
+    C --&gt; D(Transformar)
+    D --&gt; E(Visualizar gráficos ou tabelas)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dados-em-economia" class="level2">
+<h2 class="anchored" data-anchor-id="dados-em-economia">2 Dados em Economia</h2>
+<p>Qual a importância dos dados para a economia?</p>
+<ul>
+<li><strong>Tomada de Decião</strong>: Os dados ajudam os economistas e os decisores de políticos a tomar decisões informadas com base em evidências concretas.</li>
+<li><strong>Compreensão da Economia</strong>: Os dados permitem compreender melhor a economia, identificar padrões e tendências, e prever o comportamento económico futuro.</li>
+<li><strong>Avaliação de Políticas</strong>: Os dados são essenciais para avaliar o impacto das políticas económicas e sociais e para identificar áreas de melhoria.</li>
+<li><strong>Modelação e Previsão</strong>: Os dados são utilizados para criar modelos económicos e prever o comportamento dos mercados, dos consumidores e da economia em geral.</li>
+<li><strong>Investigação</strong>: Os dados são fundamentais (matéria prima da investigação empírica) para a investigação económica e para a produção de conhecimento na área da economia.</li>
+</ul>
+<p><em>Exemplo</em>:</p>
+<p>Curva da Procura: A curva da procura é estimados com dados de preços e quantidades de um bem ou serviço. A relação entre o preço e a quantidade procurada é representada graficamente pela curva da procura.</p>
+<p><span class="math display">\[
+Q = a - bP
+\]</span></p>
+<p><span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> são constantes que representam a quantidade procurada quando o preço é zero e a sensibilidade da quantidade procurada ao preço, respetivamente.</p>
+</section>
+<section id="extensões-de-ficheiros-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="extensões-de-ficheiros-de-dados">3 Extensões de ficheiros de dados</h2>
+<p>Os dados podem ser armazenados em diferentes formatos de ficheiros, cada um com as suas características e aplicações específicas. Aqui estão alguns dos formatos de ficheiros de dados mais comuns e as suas extensões associadas:</p>
+<p><code>.txt</code> - texto</p>
+<p><code>.docx</code> - microsoft word</p>
+<p><code>.xlsx</code> - microsoft excel</p>
+<p><code>.csv</code> - comma separated values</p>
+<p><code>.pbix</code> - power bi</p>
+<p><code>.r</code> - script rar</p>
+<p><code>.db</code> - database (sql)</p>
+<p><code>.json</code>- javascript object notation</p>
+<p><code>.xml</code> - extensible markup language</p>
+<p><code>.html</code> - hypertext markup language</p>
+<p><code>.pdf</code> - portable document format</p>
+<p><code>.pptx</code> - microsoft powerpoint</p>
+<p><code>.jpg</code> - imagem</p>
+<p><code>.png</code> - imagem</p>
+<p><code>.mp4</code> - video</p>
+<p><code>.mp3</code> - audio</p>
+<p><code>.zip</code> - comprimido “zippado”</p>
+<p><code>.rar</code> - comprimido “rar”</p>
+<p><code>.7z</code> - compactado “7z”</p>
+</section>
+<section id="nomes-de-ficheiros" class="level2">
+<h2 class="anchored" data-anchor-id="nomes-de-ficheiros">4 Nomes de Ficheiros</h2>
+<p>Ao trabalhar com ficheiros, é importante atribuir nomes de ficheiros simples e bem estruturados para facilitar a organização e a gestão. Aqui estão algumas dicas para atribuir nomes de ficheiros:</p>
+<ol type="1">
+<li><p><strong>Descritivo</strong>: Utilizar nomes de ficheiros que descrevem claramente o conteúdo do ficheiro. Por exemplo, em vez de “dados1.xlsx”, utilizar “Vendas_1T_2023.xlsx”.</p></li>
+<li><p><strong>Formatos Consistentes</strong>: Escolha um formato padrão para os nomes de ficheiros e use-o consistentemente. Por exemplo, é possível utilizar “AAAA-MM-DD” para datas (2023-02-19).</p></li>
+<li><p><strong>Evit arEspaços</strong>: Em vez de espaços, utilizar sublinhados (_) ou hífens (-) para separar palavras. Ajuda a evitar problemas de compatibilidade em algumas linguagens de programação.</p></li>
+<li><p><strong>Datas</strong>: Para ficheiros que são atualizados regularmente, incluir a data no nome do ficheiro. Por exemplo, “Relatório_Financeiro_2023-02-19.xlsx”.</p></li>
+<li><p><strong>Versões</strong>: Quando se trabalha em várias versões de um ficheiro, utulizar números de versão no nome do ficheiro. Por exemplo, “Projeto_versao1.0.docx”. <u>Não utilizar “final”</u>.</p></li>
+<li><p><strong>Comprimento</strong>: Manter os nomes dos ficheiros curtos, mas informativos. Evite nomes excessivamente longos que podem ser difíceis de ler e gerir.</p></li>
+<li><p><strong>Caracteres Especiais</strong>: Não utilizar caracteres especiais como <code>/ \ : * ? " &lt; &gt; |</code>, pois podem causar problemas em diferentes sistemas operativos e linguagens de programação.</p></li>
+</ol>
+<section id="exemplos-de-nomes-adequados-para-ficheiros" class="level3">
+<h3 class="anchored" data-anchor-id="exemplos-de-nomes-adequados-para-ficheiros"><em>Exemplos de Nomes adequados para ´Ficheiros`</em></h3>
+<ul>
+<li><strong>“Análise_Mercado_2023-02-19.xlsx”</strong></li>
+<li><strong>“Resumo_Económico_4T_2023.docx”</strong></li>
+<li><strong>“Estudo_Demográfico_versao2.0.pdf”</strong></li>
+</ul>
+</section>
+</section>
+<section id="como-fazer-perguntas-orientadas-a-dados" class="level2">
+<h2 class="anchored" data-anchor-id="como-fazer-perguntas-orientadas-a-dados">5 Como Fazer Perguntas Orientadas a Dados</h2>
+<ul>
+<li><strong>Importância de perguntas bem formuladas</strong>: Como perguntas claras e específicas ajudam na análise de dados.</li>
+<li><strong>Exemplos de perguntas</strong>: “Qual é a relação entre o investimento em educação e o crescimento económico?” ou “Como a inflação afeta o poder de compra das famílias?”</li>
+<li><strong>Atividade prática</strong>: Dividir os alunos em grupos e pedir-lhes que formulem perguntas orientadas a dados sobre um conjunto de dados económicos fornecido.</li>
+</ul>
+</section>
+<section id="diagnóstico-do-excel" class="level2">
+<h2 class="anchored" data-anchor-id="diagnóstico-do-excel">6 Diagnóstico do Excel</h2>
+<section id="instalar-excel-apenas-para-computador-pessoal" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-excel-apenas-para-computador-pessoal">6.1. Instalar Excel (apenas para computador pessoal)</h3>
+<ol type="1">
+<li><strong>Site:</strong> <a href="portal.office.com">portal.office.com</a></li>
+<li><strong>login:</strong> conta UBI</li>
+<li>canto superior direito: <code>instalar o Office</code></li>
+<li>Utilizar o ficheiro <code>C1_xlsx</code> no moodle-UBI.</li>
+</ol>
+</section>
+<section id="funções-básicas-do-excel" class="level3">
+<h3 class="anchored" data-anchor-id="funções-básicas-do-excel">6.2. Funções Básicas do Excel</h3>
+<ul>
+<li><strong>Soma</strong>: <code>=SOMA(A1:A10)</code></li>
+<li><strong>Média</strong>: <code>=MÉDIA(A1:A10)</code></li>
+<li><strong>Máximo</strong>: <code>=MÁXIMO(A1:A10)</code></li>
+<li><strong>Mínimo</strong>: <code>=MÍNIMO(A1:A10)</code></li>
+</ul>
+</section>
+<section id="alguns-atalhos-do-teclado" class="level3">
+<h3 class="anchored" data-anchor-id="alguns-atalhos-do-teclado">6.3. Alguns atalhos do teclado</h3>
+<ul>
+<li><p>Soma automática: <code>Atl</code> + <code>=</code></p></li>
+<li><p>Selecionar de células: <code>Shift</code> + <code>setas</code></p></li>
+<li><p>Copiar: <code>Ctrl</code> + <code>C</code> | Colar: <code>Ctrl</code> + <code>V</code> | Cortar: <code>Ctrl</code> + <code>X</code></p></li>
+<li><p>Anular: <code>Ctrl</code> + <code>Z</code> | Refazer: <code>Ctrl</code> + <code>Y</code></p></li>
+<li><p>Selecionar conjunto de dados: <code>Ctrl</code> + <code>Shift</code> + <code>setas</code></p></li>
+<li><p>Selecionar linha: <code>Shift</code> + <code>barra de espaço</code></p></li>
+<li><p>Selecionar coluna: <code>Ctrl</code> + <code>barra de espaço</code></p></li>
+<li><p>Eliminar coluna/linha: <code>Ctrl</code> + <code>-</code></p></li>
+<li><p>Inserir coluna/linha: <code>Ctrl</code> + <code>+</code></p></li>
+<li><p>Eliminar conteúdo selecionado: <code>Delete</code></p></li>
+<li><p>Selecionar tudo: <code>Ctrl</code> + <code>T</code></p></li>
+<li><p>Novo ficheiro: <code>Ctrl</code> + <code>N</code></p></li>
+<li><p>Abrir ficheiro: <code>Ctrl</code> + <code>O</code></p></li>
+</ul>
+</section>
+</section>
+<section id="agluns-cáculos-com-dados-económicos" class="level2">
+<h2 class="anchored" data-anchor-id="agluns-cáculos-com-dados-económicos">7. Agluns cáculos com dados económicos</h2>
+<p>🧮 Calcular PIB per capita:</p>
+<p><span class="math display">\[
+PIB_{pc}=\frac{PIB}{População}
+\]</span></p>
+<p>🧮 Calcular variação do PIB em unidades:</p>
+<p><span class="math display">\[
+\Delta PIB=PIB_{t} - PIB_{t-1}
+\]</span></p>
+<p>🧮 Calcular taxa de variação do PIB</p>
+<p><span class="math display">\[
+\Delta PIB_{\%} =
+\frac{PIB_{t} - PIB_{t-1}}{PIB_{t-1}}
+\]</span></p>
+<p>🧮 ou com logaritmos:</p>
+<p><span class="math display">\[
+\Delta PIB_{\%} = \ln\left(\frac{PIB_{t}}{PIB_{t-1}}\right)=\ln(PIB_{t})-\ln(PIB_{t-1})
+\]</span></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
