@@ -36,13 +36,13 @@ toc-title: Table of contents
 O seguinte diagrama ilustra o processo de recolha de dados e as decisões
 a tomar em cada etapa.
 
+<figure class=''>
 
-<div>
+<img src="Class2_files\figure-markdown\mermaid-figure-1.png"
+style="width:5.28in;height:3.31in" />
 
-![](Class2_files\figure-markdown\mermaid-figure-1.png){width="5.28in"
-height="3.31in"}
+</figure>
 
-</div>
 
 ## 1. Selecionar o tipo de dados correto
 
