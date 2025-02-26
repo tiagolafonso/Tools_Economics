@@ -3,21 +3,21 @@ title: "Ferramente de Apoio à Economia"
 subtitle: "Aula 2 - Recolher e Preparar dados"
 author: "Tiago Afonso"
 date: "2025-02-25"
-format: md
+format: "markdown"
 toc: true
 ---
 
-# Consideraçãoes sobre a recolhas de dados
+# Considerações sobre a recolhas de dados
 
-O seguite diagrama ilustra o processo de recolha de dados e as decisões a tomar em cada etapa.
+O seguinte diagrama ilustra o processo de recolha de dados e as decisões a tomar em cada etapa.
 
 ```{mermaid}
 graph TD
-    A[1. Selecionar o tipo de dados correto] --> B[2. Determinar o período de tempo]
-    B -->|Recolher novos dados?| C[3.1 Decidir como os dados serão recolhidos]
-    B -->|Utilizar dados existentes?| D[3.2 Escolher fontes de dados]
-    C --> E[4.1 Decidir quantos dados a recolher]
-    D --> F[4.2 Decidir quais dados utilizar]
+    A[Selecionar o tipo de dados] --> B[Determinar o período de tempo]
+    B -->|Recolher novos dados?| C[3.1 Como os dados serão recolhidos]
+    B -->|Utilizar dados existentes?| D[3.2 Fontes de dados]
+    C --> E[4.1 Quantos dados a recolher]
+    D --> F[4.2 Quais dados utilizar]
 ```
 
 ## 1. Selecionar o tipo de dados correto
@@ -38,7 +38,7 @@ graph TD
 
 ### Formato dos dados
 
--   **Dados Tabulares/estruturadps** São dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa um atributo.
+-   **Dados Tabulares/estruturados** São dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa um atributo.
 
 -   **Dados Não-estruturados** São dados que não estão organizados numa estrutura específica. Por exemplo, texto, imagens, vídeos, áudio, etc.
 
@@ -46,7 +46,7 @@ graph TD
 
 Para determinar o período de tempo, é importante considerar:
 
--   **Frequência de atualização** - Com que frequência os dados são atualizados? Anualmente, mensalmente, diariamente, intradiariamente, etc.
+-   **Frequência de atualização** - Com que frequência os dados são atualizados? Anualmente, mensalmente, diariamente, intra diariamente, etc.
 
 -   **Granularidade dos dados** - Qual é a unidade de tempo dos dados? Segundos, minutos, horas, dias, semanas, meses, anos, etc.
 
@@ -54,7 +54,7 @@ Para determinar o período de tempo, é importante considerar:
 
 Tendo em a periodicidade dos dados, podemos dividir os dados em duas categorias:
 
--   **Dados Estáticos** - Dados que não mudam ao longo do tempo. Por exemplo, *inqueritos de satisfação*, *listas de clientes*, *listas de produtos*, etc.
+-   **Dados Estáticos** - Dados que não mudam ao longo do tempo. Por exemplo, *inquéritos de satisfação*, *listas de clientes*, *listas de produtos*, etc.
 
 -   **Dados dinâmicos/Séries Temporais** - Dados que mudam ao longo do tempo. Por exemplo, *vendas diárias*, *temperatura diária*, *preço das ações*, etc.
 
@@ -71,9 +71,9 @@ Considerando a recolha de dados, podemos dividir o processo em dois tipos:
         -   Custo e tempo associados à recolha de dados.
         -   Possibilidade de enviesamento dos dados.
 
-O enviesamnto dos dados ou da amostra é um problema comum na recolha de dados primários. Pode ocorrer quando a amostra não é representativa da população ou quando os dados são recolhidos de forma tendenciosa (para obter um determindado resultado). Por exemplo: *amostra de conveniência*, *amostra de voluntários*, *amostra de amigos*, etc.
+O enviesamento dos dados ou da amostra é um problema comum na recolha de dados primários. Pode ocorrer quando a amostra não é representativa da população ou quando os dados são recolhidos de forma tendenciosa (para obter um determinado resultado). Por exemplo: *amostra de conveniência*, *amostra de voluntários*, *amostra de amigos*, etc.
 
--   **Dados secundários** - Dados que já foram recolhidos por outra pessoa ou organização para um propósito diferente. Por exemplo, *bases de dados públicas*, *relatórios de mercado*, *estudos científicostida*, etc.
+-   **Dados secundários** - Dados que já foram recolhidos por outra pessoa ou organização para um propósito diferente. Por exemplo, *bases de dados públicas*, *relatórios de mercado*, *estudos científicos*, etc.
 
     -   Vantagens:
         -   Custo e tempo reduzidos na recolha de dados.
@@ -87,7 +87,7 @@ O enviesamnto dos dados ou da amostra é um problema comum na recolha de dados p
 
 Quando recorremos a dados secundários, é importante avaliar a qualidade dos dados e a credibilidade da fonte. Por exemplo, verificar a metodologia de recolha de dados, a representatividade da amostra a fiabilidade dos dados.
 
-*Exemplos de fontes de dados secundários utilziados em economia:*
+*Exemplos de fontes de dados secundários utilizados em economia:*
 
 [WDI](https://databank.worldbank.org/source/world-development-indicators)- World Development Indicators
 
@@ -113,7 +113,7 @@ Quando recorremos a dados secundários, é importante avaliar a qualidade dos da
 
 # Estrutura de dados
 
-Os dados podem estar ogranizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. As duas formas mais comuns de organizar os dados são:
+Os dados podem estar organizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. As duas formas mais comuns de organizar os dados são:
 
 ## 1. Dados em formato largo (*wide data*)
 
@@ -157,9 +157,9 @@ Nos dados económicos existem 3 dimensões:
 
 -   **Entidades** ($i=1,...n$) - Indivíduos, empresas, países, etc.
 
--   **Variáveis** ($x_1,x_2, x_3, x_j$) - PIB, inflação, desemprego, etc.
+-   **Variáveis** ($x_1,x_2, x_3,..., x_j$) - PIB, inflação, desemprego, etc.
 
--   **Periodos de tempo** ($t=1,...T$) - Anos, trimestres, meses, etc.
+-   **Períodos de tempo** ($t=1,...,T$) - Anos, trimestres, meses, etc.
 
 ### Dados seccionais
 
@@ -206,7 +206,7 @@ Exemplo:
 
 # Exercício
 
-1.  Contrua um painel de dados com as seguintes características:
+*1.  Contrua um painel de dados com as seguintes características:*
 
 -   Fonte: WDI
 -   [4 países:]{.underline} Portugal, Espanha, França e Grécia
@@ -214,7 +214,7 @@ Exemplo:
 -   [3 variáveis:]{.underline} `GDP (constant LCU)`, `Population, total` e `Exports of goods and services (constant LCU)`
 -   [Frequência:]{.underline} anual
 
-2.  Contruir um conjunto de dados em formato de Séries Temporais com as seguintes características:
+*2.  Contruir um conjunto de dados em formato de Séries Temporais com as seguintes características:*
 
 -   [Fonte]{.underline}: Eurostat
 -   [Variável]{.underline}: `Nights spent at tourist accommodation establishments by residents/non-residents`

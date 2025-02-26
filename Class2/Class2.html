@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,10 +31,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="Class2_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="Class2_files/libs/quarto-html/anchor.min.js"></script>
 <link href="Class2_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Class2_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Class2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Class2_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Class2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Class2_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Class2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="Class2_files/libs/quarto-diagram/mermaid.min.js"></script>
 <script src="Class2_files/libs/quarto-diagram/mermaid-init.js"></script>
 <link href="Class2_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -79,7 +79,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#consideraçãoes-sobre-a-recolhas-de-dados" id="toc-consideraçãoes-sobre-a-recolhas-de-dados" class="nav-link active" data-scroll-target="#consideraçãoes-sobre-a-recolhas-de-dados">Consideraçãoes sobre a recolhas de dados</a>
+  <li><a href="#considerações-sobre-a-recolhas-de-dados" id="toc-considerações-sobre-a-recolhas-de-dados" class="nav-link active" data-scroll-target="#considerações-sobre-a-recolhas-de-dados">Considerações sobre a recolhas de dados</a>
   <ul class="collapse">
   <li><a href="#selecionar-o-tipo-de-dados-correto" id="toc-selecionar-o-tipo-de-dados-correto" class="nav-link" data-scroll-target="#selecionar-o-tipo-de-dados-correto">1. Selecionar o tipo de dados correto</a>
   <ul class="collapse">
@@ -100,6 +100,7 @@ window.Quarto = {
   <li><a href="#dados-em-painel" id="toc-dados-em-painel" class="nav-link" data-scroll-target="#dados-em-painel">Dados em painel</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#exercício" id="toc-exercício" class="nav-link" data-scroll-target="#exercício">Exercício</a></li>
   </ul>
 </nav>
 </div>
@@ -137,20 +138,20 @@ window.Quarto = {
 </header>
 
 
-<section id="consideraçãoes-sobre-a-recolhas-de-dados" class="level1">
-<h1>Consideraçãoes sobre a recolhas de dados</h1>
-<p>O seguite diagrama ilustra o processo de recolha de dados e as decisões a tomar em cada etapa.</p>
+<section id="considerações-sobre-a-recolhas-de-dados" class="level1">
+<h1>Considerações sobre a recolhas de dados</h1>
+<p>O seguinte diagrama ilustra o processo de recolha de dados e as decisões a tomar em cada etapa.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">graph TD
-    A[1. Selecionar o tipo de dados correto] --&gt; B[2. Determinar o período de tempo]
-    B --&gt;|Recolher novos dados?| C[3.1 Decidir como os dados serão recolhidos]
-    B --&gt;|Utilizar dados existentes?| D[3.2 Escolher fontes de dados]
-    C --&gt; E[4.1 Decidir quantos dados a recolher]
-    D --&gt; F[4.2 Decidir quais dados utilizar]
+    A[Selecionar o tipo de dados] --&gt; B[Determinar o período de tempo]
+    B --&gt;|Recolher novos dados?| C[3.1 Como os dados serão recolhidos]
+    B --&gt;|Utilizar dados existentes?| D[3.2 Fontes de dados]
+    C --&gt; E[4.1 Quantos dados a recolher]
+    D --&gt; F[4.2 Quais dados utilizar]
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -177,7 +178,7 @@ window.Quarto = {
 <section id="formato-dos-dados" class="level3">
 <h3 class="anchored" data-anchor-id="formato-dos-dados">Formato dos dados</h3>
 <ul>
-<li><p><strong>Dados Tabulares/estruturadps</strong> São dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa um atributo.</p></li>
+<li><p><strong>Dados Tabulares/estruturados</strong> São dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa um atributo.</p></li>
 <li><p><strong>Dados Não-estruturados</strong> São dados que não estão organizados numa estrutura específica. Por exemplo, texto, imagens, vídeos, áudio, etc.</p></li>
 </ul>
 </section>
@@ -186,13 +187,13 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="determinar-o-período-de-tempo">2. Determinar o período de tempo</h2>
 <p>Para determinar o período de tempo, é importante considerar:</p>
 <ul>
-<li><p><strong>Frequência de atualização</strong> - Com que frequência os dados são atualizados? Anualmente, mensalmente, diariamente, intradiariamente, etc.</p></li>
+<li><p><strong>Frequência de atualização</strong> - Com que frequência os dados são atualizados? Anualmente, mensalmente, diariamente, intra diariamente, etc.</p></li>
 <li><p><strong>Granularidade dos dados</strong> - Qual é a unidade de tempo dos dados? Segundos, minutos, horas, dias, semanas, meses, anos, etc.</p></li>
 <li><p><strong>Horizonte temporal</strong> - Qual é o horizonte temporal dos dados? 2000-2020, 2010-2020, 2020-2025, etc.</p></li>
 </ul>
 <p>Tendo em a periodicidade dos dados, podemos dividir os dados em duas categorias:</p>
 <ul>
-<li><p><strong>Dados Estáticos</strong> - Dados que não mudam ao longo do tempo. Por exemplo, <em>inqueritos de satisfação</em>, <em>listas de clientes</em>, <em>listas de produtos</em>, etc.</p></li>
+<li><p><strong>Dados Estáticos</strong> - Dados que não mudam ao longo do tempo. Por exemplo, <em>inquéritos de satisfação</em>, <em>listas de clientes</em>, <em>listas de produtos</em>, etc.</p></li>
 <li><p><strong>Dados dinâmicos/Séries Temporais</strong> - Dados que mudam ao longo do tempo. Por exemplo, <em>vendas diárias</em>, <em>temperatura diária</em>, <em>preço das ações</em>, etc.</p></li>
 </ul>
 </section>
@@ -214,9 +215,9 @@ window.Quarto = {
 </ul></li>
 </ul></li>
 </ul>
-<p>O enviesamnto dos dados ou da amostra é um problema comum na recolha de dados primários. Pode ocorrer quando a amostra não é representativa da população ou quando os dados são recolhidos de forma tendenciosa (para obter um determindado resultado). Por exemplo: <em>amostra de conveniência</em>, <em>amostra de voluntários</em>, <em>amostra de amigos</em>, etc.</p>
+<p>O enviesamento dos dados ou da amostra é um problema comum na recolha de dados primários. Pode ocorrer quando a amostra não é representativa da população ou quando os dados são recolhidos de forma tendenciosa (para obter um determinado resultado). Por exemplo: <em>amostra de conveniência</em>, <em>amostra de voluntários</em>, <em>amostra de amigos</em>, etc.</p>
 <ul>
-<li><p><strong>Dados secundários</strong> - Dados que já foram recolhidos por outra pessoa ou organização para um propósito diferente. Por exemplo, <em>bases de dados públicas</em>, <em>relatórios de mercado</em>, <em>estudos científicostida</em>, etc.</p>
+<li><p><strong>Dados secundários</strong> - Dados que já foram recolhidos por outra pessoa ou organização para um propósito diferente. Por exemplo, <em>bases de dados públicas</em>, <em>relatórios de mercado</em>, <em>estudos científicos</em>, etc.</p>
 <ul>
 <li>Vantagens:
 <ul>
@@ -234,7 +235,7 @@ window.Quarto = {
 </ul></li>
 </ul>
 <p>Quando recorremos a dados secundários, é importante avaliar a qualidade dos dados e a credibilidade da fonte. Por exemplo, verificar a metodologia de recolha de dados, a representatividade da amostra a fiabilidade dos dados.</p>
-<p><em>Exemplos de fontes de dados secundários utilziados em economia:</em></p>
+<p><em>Exemplos de fontes de dados secundários utilizados em economia:</em></p>
 <p><a href="https://databank.worldbank.org/source/world-development-indicators">WDI</a>- World Development Indicators</p>
 <p><a href="https://www.imf.org/en/Data">IMF</a>- International Monetary Fund</p>
 <p><a href="https://www.oecd.org/en/data.html">OECD</a>- Organisation for Economic Co-operation and Development</p>
@@ -250,7 +251,7 @@ window.Quarto = {
 </section>
 <section id="estrutura-de-dados" class="level1">
 <h1>Estrutura de dados</h1>
-<p>Os dados podem estar ogranizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. As duas formas mais comuns de organizar os dados são:</p>
+<p>Os dados podem estar organizados de diferentes formas, dependendo do tipo de análise que pretendemos realizar. As duas formas mais comuns de organizar os dados são:</p>
 <section id="dados-em-formato-largo-wide-data" class="level2">
 <h2 class="anchored" data-anchor-id="dados-em-formato-largo-wide-data">1. Dados em formato largo (<em>wide data</em>)</h2>
 <p>Os dados em formato largo são organizados de forma a que cada linha represente uma observação e cada coluna represente uma variável. Este formato é mais comum em bases de dados tabulares e é mais fácil de ler e interpretar.</p>
@@ -355,8 +356,8 @@ window.Quarto = {
 <p>Nos dados económicos existem 3 dimensões:</p>
 <ul>
 <li><p><strong>Entidades</strong> (<span class="math inline">\(i=1,...n\)</span>) - Indivíduos, empresas, países, etc.</p></li>
-<li><p><strong>Variáveis</strong> (<span class="math inline">\(x_1,x_2, x_3, x_j\)</span>) - PIB, inflação, desemprego, etc.</p></li>
-<li><p><strong>Periodos de tempo</strong> (<span class="math inline">\(t=1,...T\)</span>) - Anos, trimestres, meses, etc.</p></li>
+<li><p><strong>Variáveis</strong> (<span class="math inline">\(x_1,x_2, x_3,..., x_j\)</span>) - PIB, inflação, desemprego, etc.</p></li>
+<li><p><strong>Períodos de tempo</strong> (<span class="math inline">\(t=1,...,T\)</span>) - Anos, trimestres, meses, etc.</p></li>
 </ul>
 <section id="dados-seccionais" class="level3">
 <h3 class="anchored" data-anchor-id="dados-seccionais">Dados seccionais</h3>
@@ -482,9 +483,27 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>wf</p>
 </section>
 </section>
+</section>
+<section id="exercício" class="level1">
+<h1>Exercício</h1>
+<p><em>1. Contrua um painel de dados com as seguintes características:</em></p>
+<ul>
+<li>Fonte: WDI</li>
+<li><u>4 países:</u> Portugal, Espanha, França e Grécia</li>
+<li><u>20 anos:</u> até 2023</li>
+<li><u>3 variáveis:</u> <code>GDP (constant LCU)</code>, <code>Population, total</code> e <code>Exports of goods and services (constant LCU)</code></li>
+<li><u>Frequência:</u> anual</li>
+</ul>
+<p><em>2. Contruir um conjunto de dados em formato de Séries Temporais com as seguintes características:</em></p>
+<ul>
+<li><u>Fonte</u>: Eurostat</li>
+<li><u>Variável</u>: <code>Nights spent at tourist accommodation establishments by residents/non-residents</code></li>
+<li><u>País</u>: Portugal</li>
+<li><u>Horizonte Temporal</u>: máximo disponível</li>
+<li><u>Frequência</u>: mensal</li>
+</ul>
 </section>
 
 </main>
@@ -571,6 +590,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -681,6 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

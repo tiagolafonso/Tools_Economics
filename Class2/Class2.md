@@ -1,39 +1,48 @@
-# Ferramente de Apoio à Economia - Aula 2
-Tiago Afonso
-2025-02-25
+---
+author:
+- Tiago Afonso
+authors:
+- Tiago Afonso
+date: 2025-02-25
+subtitle: Aula 2 - Recolher e Preparar dados
+title: Ferramente de Apoio à Economia
+toc-title: Table of contents
+---
 
--   [Consideraçãoes sobre a recolhas de
-    dados](#consideraçãoes-sobre-a-recolhas-de-dados)
+-   [Considerações sobre a recolhas de
+    dados](#considerações-sobre-a-recolhas-de-dados){#toc-considerações-sobre-a-recolhas-de-dados}
     -   [1. Selecionar o tipo de dados
-        correto](#selecionar-o-tipo-de-dados-correto)
-        -   [Tipos de dados](#tipos-de-dados)
-        -   [Formato dos dados](#formato-dos-dados)
+        correto](#selecionar-o-tipo-de-dados-correto){#toc-selecionar-o-tipo-de-dados-correto}
+        -   [Tipos de dados](#tipos-de-dados){#toc-tipos-de-dados}
+        -   [Formato dos
+            dados](#formato-dos-dados){#toc-formato-dos-dados}
     -   [2. Determinar o período de
-        tempo](#determinar-o-período-de-tempo)
-    -   [3. Recolher dados](#recolher-dados)
--   [Estrutura de dados](#estrutura-de-dados)
+        tempo](#determinar-o-período-de-tempo){#toc-determinar-o-período-de-tempo}
+    -   [3. Recolher dados](#recolher-dados){#toc-recolher-dados}
+-   [Estrutura de dados](#estrutura-de-dados){#toc-estrutura-de-dados}
     -   [1. Dados em formato largo (*wide
-        data*)](#dados-em-formato-largo-wide-data)
+        data*)](#dados-em-formato-largo-wide-data){#toc-dados-em-formato-largo-wide-data}
     -   [2. Dados em formato longo (*long
-        data*)](#dados-em-formato-longo-long-data)
+        data*)](#dados-em-formato-longo-long-data){#toc-dados-em-formato-longo-long-data}
     -   [3. Estrutura de dados
-        Económicos](#estrutura-de-dados-económicos)
-        -   [Dados seccionais](#dados-seccionais)
-        -   [Séries Temporais](#séries-temporais)
-        -   [Dados em painel](#dados-em-painel)
--   [Exercício](#exercício)
+        Económicos](#estrutura-de-dados-económicos){#toc-estrutura-de-dados-económicos}
+        -   [Dados seccionais](#dados-seccionais){#toc-dados-seccionais}
+        -   [Séries Temporais](#séries-temporais){#toc-séries-temporais}
+        -   [Dados em painel](#dados-em-painel){#toc-dados-em-painel}
+-   [Exercício](#exercício){#toc-exercício}
 
-# Consideraçãoes sobre a recolhas de dados
+# Considerações sobre a recolhas de dados
 
-O seguite diagrama ilustra o processo de recolha de dados e as decisões
+O seguinte diagrama ilustra o processo de recolha de dados e as decisões
 a tomar em cada etapa.
 
-<figure class=''>
 
-<img src="Class2_files\figure-markdown_strict\mermaid-figure-1.png"
-style="width:6.1in;height:5.23in" />
+<div>
 
-</figure>
+![](Class2_files\figure-markdown\mermaid-figure-1.png){width="5.28in"
+height="3.31in"}
+
+</div>
 
 ## 1. Selecionar o tipo de dados correto
 
@@ -65,7 +74,7 @@ style="width:6.1in;height:5.23in" />
 
 ### Formato dos dados
 
--   **Dados Tabulares/estruturadps** São dados organizados em linhas e
+-   **Dados Tabulares/estruturados** São dados organizados em linhas e
     colunas. Cada linha representa um registo e cada coluna representa
     um atributo.
 
@@ -78,8 +87,8 @@ style="width:6.1in;height:5.23in" />
 Para determinar o período de tempo, é importante considerar:
 
 -   **Frequência de atualização** - Com que frequência os dados são
-    atualizados? Anualmente, mensalmente, diariamente, intradiariamente,
-    etc.
+    atualizados? Anualmente, mensalmente, diariamente, intra
+    diariamente, etc.
 
 -   **Granularidade dos dados** - Qual é a unidade de tempo dos dados?
     Segundos, minutos, horas, dias, semanas, meses, anos, etc.
@@ -91,7 +100,7 @@ Tendo em a periodicidade dos dados, podemos dividir os dados em duas
 categorias:
 
 -   **Dados Estáticos** - Dados que não mudam ao longo do tempo. Por
-    exemplo, *inqueritos de satisfação*, *listas de clientes*, *listas
+    exemplo, *inquéritos de satisfação*, *listas de clientes*, *listas
     de produtos*, etc.
 
 -   **Dados dinâmicos/Séries Temporais** - Dados que mudam ao longo do
@@ -114,16 +123,16 @@ tipos:
         -   Custo e tempo associados à recolha de dados.
         -   Possibilidade de enviesamento dos dados.
 
-O enviesamnto dos dados ou da amostra é um problema comum na recolha de
+O enviesamento dos dados ou da amostra é um problema comum na recolha de
 dados primários. Pode ocorrer quando a amostra não é representativa da
 população ou quando os dados são recolhidos de forma tendenciosa (para
-obter um determindado resultado). Por exemplo: *amostra de
-conveniência*, *amostra de voluntários*, *amostra de amigos*, etc.
+obter um determinado resultado). Por exemplo: *amostra de conveniência*,
+*amostra de voluntários*, *amostra de amigos*, etc.
 
 -   **Dados secundários** - Dados que já foram recolhidos por outra
     pessoa ou organização para um propósito diferente. Por exemplo,
     *bases de dados públicas*, *relatórios de mercado*, *estudos
-    científicostida*, etc.
+    científicos*, etc.
 
     -   Vantagens:
         -   Custo e tempo reduzidos na recolha de dados.
@@ -141,7 +150,7 @@ dos dados e a credibilidade da fonte. Por exemplo, verificar a
 metodologia de recolha de dados, a representatividade da amostra a
 fiabilidade dos dados.
 
-*Exemplos de fontes de dados secundários utilziados em economia:*
+*Exemplos de fontes de dados secundários utilizados em economia:*
 
 [WDI](https://databank.worldbank.org/source/world-development-indicators)-
 World Development Indicators
@@ -173,7 +182,7 @@ Google Dataset Search
 
 # Estrutura de dados
 
-Os dados podem estar ogranizados de diferentes formas, dependendo do
+Os dados podem estar organizados de diferentes formas, dependendo do
 tipo de análise que pretendemos realizar. As duas formas mais comuns de
 organizar os dados são:
 
@@ -187,36 +196,12 @@ interpretar.
 Por exemplo, considere a seguinte tabela com dados de vendas de
 produtos:
 
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Produto A</th>
-<th>Produto B</th>
-<th>Produto C</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2025-01-01</td>
-<td>100</td>
-<td>200</td>
-<td>150</td>
-</tr>
-<tr>
-<td>2025-01-02</td>
-<td>120</td>
-<td>180</td>
-<td>160</td>
-</tr>
-<tr>
-<td>2025-01-03</td>
-<td>130</td>
-<td>190</td>
-<td>170</td>
-</tr>
-</tbody>
-</table>
+| Data       | Produto A | Produto B | Produto C |
+|------------|-----------|-----------|-----------|
+| 2025-01-01 | 100       | 200       | 150       |
+| 2025-01-02 | 120       | 180       | 160       |
+| 2025-01-03 | 130       | 190       | 170       |
+
 
 Neste formato, cada linha representa uma data e cada coluna representa
 um produto. Este formato é útil para análises que envolvem comparações
@@ -231,62 +216,17 @@ estatísticas e é mais eficiente para armazenar grandes volumes de dados.
 Por exemplo, considere a seguinte tabela com os mesmos dados de vendas
 de produtos, mas em formato longo:
 
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Produto</th>
-<th>Vendas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2025-01-01</td>
-<td>A</td>
-<td>100</td>
-</tr>
-<tr>
-<td>2025-01-01</td>
-<td>B</td>
-<td>200</td>
-</tr>
-<tr>
-<td>2025-01-01</td>
-<td>C</td>
-<td>150</td>
-</tr>
-<tr>
-<td>2025-01-02</td>
-<td>A</td>
-<td>120</td>
-</tr>
-<tr>
-<td>2025-01-02</td>
-<td>B</td>
-<td>180</td>
-</tr>
-<tr>
-<td>2025-01-02</td>
-<td>C</td>
-<td>160</td>
-</tr>
-<tr>
-<td>2025-01-03</td>
-<td>A</td>
-<td>130</td>
-</tr>
-<tr>
-<td>2025-01-03</td>
-<td>B</td>
-<td>190</td>
-</tr>
-<tr>
-<td>2025-01-03</td>
-<td>C</td>
-<td>170</td>
-</tr>
-</tbody>
-</table>
+| Data       | Produto | Vendas |
+|------------|---------|--------|
+| 2025-01-01 | A       | 100    |
+| 2025-01-01 | B       | 200    |
+| 2025-01-01 | C       | 150    |
+| 2025-01-02 | A       | 120    |
+| 2025-01-02 | B       | 180    |
+| 2025-01-02 | C       | 160    |
+| 2025-01-03 | A       | 130    |
+| 2025-01-03 | B       | 190    |
+| 2025-01-03 | C       | 170    |
 
 Neste formato, cada linha representa uma venda de um produto numa
 determinada data. Este formato é útil para análises estatísticas que
@@ -301,105 +241,50 @@ temporais, onde cada linha representa uma observação ao longo do tempo.
 
 Nos dados económicos existem 3 dimensões:
 
--   **Entidades** (*i* = 1, ...*n*) - Indivíduos, empresas, países, etc.
+-   **Entidades** ($i=1,...n$) - Indivíduos, empresas, países, etc.
 
--   **Variáveis**
-    (*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, ..., *x*<sub>*j*</sub>) -
-    PIB, inflação, desemprego, etc.
-
--   **Periodos de tempo** (*t* = 1, ..., *T*) - Anos, trimestres, meses,
+-   **Variáveis** ($x_1,x_2, x_3,..., x_j$) - PIB, inflação, desemprego,
     etc.
+
+-   **Períodos de tempo** ($t=1,...,T$) - Anos, trimestres, meses, etc.
 
 ### Dados seccionais
 
-Várias entidades (*i* = 1, ...*n*), varias variáveis
-(*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, *x*<sub>*j*</sub>) e
-um periodo de tempo (*t* = 1)
+Várias entidades ($i=1,...n$), varias variáveis ($x_1,x_2, x_3, x_j$) e
+um periodo de tempo ($t=1$)
 
 Os *dados seccionais* são dados recolhidos numa determinada altura e
 referem-se a uma amostra de indivíduos, empresas, países, etc. Por
 exemplo, um inquérito de satisfação aos clientes de um supermercado num
 determinado dia/mês. Exemplo:
 
-<table>
-<thead>
-<tr>
-<th>Cliente</th>
-<th>Idade</th>
-<th>Sexo</th>
-<th>Profissão</th>
-<th>Rendimento</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>25</td>
-<td>M</td>
-<td>Estudante</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>2</td>
-<td>35</td>
-<td>F</td>
-<td>Empresária</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>3</td>
-<td>45</td>
-<td>M</td>
-<td>Médico</td>
-<td>3000</td>
-</tr>
-</tbody>
-</table>
+| Cliente | Idade | Sexo | Profissão  | Rendimento |
+|---------|-------|------|------------|------------|
+| 1       | 25    | M    | Estudante  | 1000       |
+| 2       | 35    | F    | Empresária | 2000       |
+| 3       | 45    | M    | Médico     | 3000       |
+
 
 ### Séries Temporais
 
-Uma entidade (*i* = 1), várias variáveis
-(*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, *x*<sub>*j*</sub>) e
-vários periodos de tempo (*t* = 1, ...*T*)
+Uma entidade ($i=1$), várias variáveis ($x_1, x_2, x_3, x_j$) e vários
+periodos de tempo ($t=1,...T$)
 
 As *séries temporais* são dados recolhidos ao longo do tempo e
 referem-se a uma unidade (indivíduo, empresa, país, etc.). Por exemplo,
 o histórico de vendas de uma empresa ao longo de vários anos.
 
 Exemplo:
-
-<table>
-<thead>
-<tr>
-<th>Ano</th>
-<th>PIB</th>
-<th>POP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2022</td>
-<td>1000</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2023</td>
-<td>1100</td>
-<td>11</td>
-</tr>
-<tr>
-<td>2024</td>
-<td>1200</td>
-<td>12</td>
-</tr>
-</tbody>
-</table>
+| Ano  | PIB  | POP |
+|------|------|-----|
+| 2022 | 1000 | 10  |
+| 2023 | 1100 | 11  |
+| 2024 | 1200 | 12  |
 
 ### Dados em painel
 
-Várias entidades (*i* = 1, ...*n*), várias variáveis
-(*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>, *x*<sub>*j*</sub>) e
-vários periodos de tempo (*t* = 1, ...*T*)
+Várias entidades ($i=1,...n$), várias variáveis ($x_1,x_2, x_3,..,x_j$) e
+vários periodos de tempo ($t=1,...T$)
 
 Os *dados em painel* combinam as características dos dados seccionais e
 longitudinais, ou seja, são dados recolhidos ao longo do tempo e
@@ -409,72 +294,30 @@ anos.
 
 Exemplo:
 
-<table>
-<thead>
-<tr>
-<th>País</th>
-<th>Ano</th>
-<th>PIB</th>
-<th>POP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Portugal</td>
-<td>2022</td>
-<td>1000</td>
-<td>10</td>
-</tr>
-<tr>
-<td>Portugal</td>
-<td>2023</td>
-<td>1100</td>
-<td>11</td>
-</tr>
-<tr>
-<td>Portugal</td>
-<td>2024</td>
-<td>1200</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Espanha</td>
-<td>2022</td>
-<td>2000</td>
-<td>20</td>
-</tr>
-<tr>
-<td>Espanha</td>
-<td>2023</td>
-<td>2100</td>
-<td>21</td>
-</tr>
-<tr>
-<td>Espanha</td>
-<td>2024</td>
-<td>2200</td>
-<td>22</td>
-</tr>
-</tbody>
-</table>
+| País     | Ano  | PIB  | POP |
+|----------|------|------|-----|
+| Portugal | 2022 | 1000 | 10  |
+| Portugal | 2023 | 1100 | 11  |
+| Portugal | 2024 | 1200 | 12  |
+| Espanha  | 2022 | 2000 | 20  |
+| Espanha  | 2023 | 2100 | 21  |
+| Espanha  | 2024 | 2200 | 22  |
 
 # Exercício
 
-**1. Contrua um painel de dados com as seguintes características:**
+*1. Contrua um painel de dados com as seguintes características:*
 
 -   Fonte: WDI
--   <u>4 países:</u> Portugal, Espanha, França e Grécia
--   <u>20 anos:</u> até 2023
--   <u>3 variáveis:</u> `GDP (constant LCU)`, `Population, total` e
-    `Exports of goods and services (constant LCU)`
--   <u>Frequência:</u> anual
+-   4 países: Portugal, Espanha, França e Grécia
+-   3 variáveis: `GDP (constant LCU)`, `Population, total` e `Exports of goods and services (constant LCU)`
+-   20 anos: até 2023
+-   Frequência: anual
 
-**2. Contruir um conjunto de dados em formato de Séries Temporais com as
-seguintes características:**
+*2. Contruir um conjunto de dados em formato de Séries Temporais com as
+seguintes características:*
 
--   <u>Fonte</u>: Eurostat
--   <u>Variável</u>:
-    `Nights spent at tourist accommodation establishments by residents/non-residents`
--   <u>País</u>: Portugal
--   <u>Horizonte Temporal</u>: máximo disponível
--   <u>Frequência</u>: mensal
+-   Fonte: Eurostat
+-  Variável:     `Nights spent at tourist accommodation establishments by residents/non-residents`
+-   País: Portugal
+-   Horizonte Temporal: máximo disponível
+-   Frequência: mensal
