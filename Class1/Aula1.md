@@ -45,7 +45,7 @@ toc-title: Table of contents
 
 <figure class=''>
 
-<img src="Aula1_files\figure-markdown_strict\mermaid-figure-1.png"
+<img src="Aula1_files\figure-markdown\mermaid-figure-1.png"
 style="width:6.1in;height:5.23in" />
 
 </figure>
