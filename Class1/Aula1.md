@@ -50,13 +50,6 @@ style="width:6.1in;height:5.23in" />
 
 </figure>
 
-
-<div>
-
-![](Aula1_files\figure-markdown\mermaid-figure-1.png)
-
-</div>
-
 ## 2 Dados em Economia
 
 Qual a importância dos dados para a economia?
