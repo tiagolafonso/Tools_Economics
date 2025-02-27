@@ -14,13 +14,11 @@ toc-title: Table of contents
     -   [1 Método de Análise de Dados](#método-de-análise-de-dados)
     -   [2 Dados em Economia](#dados-em-economia)
     -   [3 Extensões de ficheiros dedados](#extensões-de-ficheiros-de-dados)
-    -   [4 Nomes de
-        Ficheiros](#nomes-de-ficheiros)
-        -   [*Exemplos de Nomes adequados para Ficheiros\`*](#exemplos-de-nomes-adequados-para-ficheiros)
+    -   [4 Nomes de Ficheiros](#nomes-de-ficheiros)
+        -   [*Exemplos de Nomes adequados para Ficheiros*](#exemplos-de-nomes-adequados-para-ficheiros)
     -   [5 Como Fazer Perguntas Orientadas a Dados](#como-fazer-perguntas-orientadas-a-dados)
     -   [6 Diagnóstico do Excel](#diagnóstico-do-excel)
-        -   [6.1. Instalar Excel (apenas para computador
-            pessoal)](#instalar-excel-apenas-para-computador-pessoal)
+        -   [6.1. Instalar Excel (apenas para computador pessoal)](#instalar-excel-apenas-para-computador-pessoal)
         -   [6.2. Funções Básicas do Excel](#funções-básicas-do-excel)
         -   [6.3. Alguns atalhos do teclado](#alguns-atalhos-do-teclado)
     -   [7. Alguns cáculos com dados económicos](#alguns-cáculos-com-dados-económicos)
