@@ -142,7 +142,7 @@ estão algumas dicas para atribuir nomes de ficheiros:
 
 5.  **Versões**: Quando se trabalha em várias versões de um ficheiro,
     utulizar números de versão no nome do ficheiro. Por exemplo,
-    "Projeto_versao1.0.docx". [Não utilizar "final"]{.underline}.
+    "Projeto_versao1.0.docx". [Não utilizar "final"].
 
 6.  **Comprimento**: Manter os nomes dos ficheiros curtos, mas
     informativos. Evite nomes excessivamente longos que podem ser
