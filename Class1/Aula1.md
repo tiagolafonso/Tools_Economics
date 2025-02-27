@@ -247,18 +247,20 @@ $$
 PIB_{pc}=\frac{PIB}{População}
 $$
 
+
 🧮 Calcular variação do PIB em unidades:
 
 $$
 \Delta PIB=PIB_{t} - PIB_{t-1}
 $$
 
+
 🧮 Calcular taxa de variação do PIB
 
 $$
-\Delta PIB_{\%} =
-\frac{PIB_{t} - PIB_{t-1}}{PIB_{t-1}}
+\Delta PIB_{\%} = \frac{PIB_{t} - PIB_{t-1}}{PIB_{t-1}}
 $$
+
 
 🧮 ou com logaritmos:
 
