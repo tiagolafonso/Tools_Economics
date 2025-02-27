@@ -9,30 +9,21 @@ title: Ferramentas de Apoio à Economia - Aula 1
 toc-title: Table of contents
 ---
 
--   [Aula 1](#aula-1){#toc-aula-1}
-    -   [Objetivos da Aula](#objetivos-da-aula){#toc-objetivos-da-aula}
-    -   [1. Método de Análise de
-        Dados](#método-de-análise-de-dados){#toc-método-de-análise-de-dados}
-    -   [2 Dados em
-        Economia](#dados-em-economia){#toc-dados-em-economia}
-    -   [3 Extensões de ficheiros de
-        dados](#extensões-de-ficheiros-de-dados){#toc-extensões-de-ficheiros-de-dados}
+-   [Aula 1](#aula-1)
+    -   [Objetivos da Aula](#objetivos-da-aula)
+    -   [1 Método de Análise de Dados](#método-de-análise-de-dados)
+    -   [2 Dados em Economia](#dados-em-economia)
+    -   [3 Extensões de ficheiros dedados](#extensões-de-ficheiros-de-dados)
     -   [4 Nomes de
-        Ficheiros](#nomes-de-ficheiros){#toc-nomes-de-ficheiros}
-        -   [*Exemplos de Nomes adequados para
-            ´Ficheiros\`*](#exemplos-de-nomes-adequados-para-ficheiros){#toc-exemplos-de-nomes-adequados-para-ficheiros}
-    -   [5 Como Fazer Perguntas Orientadas a
-        Dados](#como-fazer-perguntas-orientadas-a-dados){#toc-como-fazer-perguntas-orientadas-a-dados}
-    -   [6 Diagnóstico do
-        Excel](#diagnóstico-do-excel){#toc-diagnóstico-do-excel}
+        Ficheiros](#nomes-de-ficheiros)
+        -   [*Exemplos de Nomes adequados para Ficheiros\`*](#exemplos-de-nomes-adequados-para-ficheiros)
+    -   [5 Como Fazer Perguntas Orientadas a Dados](#como-fazer-perguntas-orientadas-a-dados)
+    -   [6 Diagnóstico do Excel](#diagnóstico-do-excel)
         -   [6.1. Instalar Excel (apenas para computador
-            pessoal)](#instalar-excel-apenas-para-computador-pessoal){#toc-instalar-excel-apenas-para-computador-pessoal}
-        -   [6.2. Funções Básicas do
-            Excel](#funções-básicas-do-excel){#toc-funções-básicas-do-excel}
-        -   [6.3. Alguns atalhos do
-            teclado](#alguns-atalhos-do-teclado){#toc-alguns-atalhos-do-teclado}
-    -   [7. Alguns cáculos com dados
-        económicos](#alguns-cáculos-com-dados-económicos){#toc-alguns-cáculos-com-dados-económicos}
+            pessoal)](#instalar-excel-apenas-para-computador-pessoal)
+        -   [6.2. Funções Básicas do Excel](#funções-básicas-do-excel)
+        -   [6.3. Alguns atalhos do teclado](#alguns-atalhos-do-teclado)
+    -   [7. Alguns cáculos com dados económicos](#alguns-cáculos-com-dados-económicos)
 
 # Aula 1
 
@@ -256,6 +247,7 @@ $$
 
 
 🧮 Calcular taxa de variação do PIB
+
 
 $$
 \Delta PIB_{\%} = \frac{PIB_{t} - PIB_{t-1}}{PIB_{t-1}}
