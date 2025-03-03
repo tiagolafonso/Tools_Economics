@@ -7,22 +7,20 @@ toc-title: Table of contents
 ---
 
 -   [Considerações sobre a recolhas de
-    dados](#considerações-sobre-a-recolhas-de-dados){#toc-considerações-sobre-a-recolhas-de-dados}
-    -   [1. Selecionar o tipo de dados correto](#selecionar-o-tipo-de-dados-correto){#toc-selecionar-o-tipo-de-dados-correto}
-        -   [Tipos de dados](#tipos-de-dados){#toc-tipos-de-dados}
-        -   [Formato dos dados](#formato-dos-dados){#toc-formato-dos-dados}
-    -   [2. Determinar o período de tempo](#determinar-o-período-de-tempo){#toc-determinar-o-período-de-tempo}
-    -   [3. Recolha de dados](#recolher-dados){#toc-recolher-dados}
--   [Estrutura de dados](#estrutura-de-dados){#toc-estrutura-de-dados}
-    -   [1. Dados em formato largo (*wide data*)](#dados-em-formato-largo-wide-data){#toc-dados-em-formato-largo-wide-data}
-    -   [2. Dados em formato longo (*long
-        data*)](#dados-em-formato-longo-long-data){#toc-dados-em-formato-longo-long-data}
-    -   [3. Estrutura de dados
-        Económicos](#estrutura-de-dados-económicos){#toc-estrutura-de-dados-económicos}
-        -   [Dados seccionais](#dados-seccionais){#toc-dados-seccionais}
-        -   [Séries Temporais](#séries-temporais){#toc-séries-temporais}
-        -   [Dados em painel](#dados-em-painel){#toc-dados-em-painel}
--   [Exercício](#exercício){#toc-exercício}
+    dados](#considerações-sobre-a-recolhas-de-dados)
+    -   [1 Selecionar o tipo de dados correto](#selecionar-o-tipo-de-dados-correto)
+        -   [Tipos de dados](#tipos-de-dados)
+        -   [Formato dos dados](#formato-dos-dados)
+    -   [2 Determinar o período de tempo](#determinar-o-período-de-tempo)
+    -   [3 Recolha de dados](#recolher-dados)
+-   [Estrutura de dados](#estrutura-de-dados)
+    -   [1 Dados em formato largo (*wide data*)](#dados-em-formato-largo-wide-data)
+    -   [2 Dados em formato longo (*long data*)](#dados-em-formato-longo-long-data)
+    -   [3 Estrutura de dados Económicos](#estrutura-de-dados-económicos)
+        -   [Dados seccionais](#dados-seccionais)
+        -   [Séries Temporais](#séries-temporais)
+        -   [Dados em painel](#dados-em-painel)
+-   [Exercício](#exercício)
 
 # Considerações sobre a recolhas de dados
 
