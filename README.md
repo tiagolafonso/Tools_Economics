@@ -4,4 +4,5 @@ Ficheiros das aulas de "Ferramentas de Apoio à Economia"
 
 tiago.afonso@ubi.pt
 
-**Class2** - 25 fevereiro
+Aulas de Ferramentas de Apoio à Economia
+
