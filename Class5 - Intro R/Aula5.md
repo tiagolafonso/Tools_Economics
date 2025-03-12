@@ -1,9 +1,7 @@
 ---
 author:
 - Tiago Afonso
-authors:
-- Tiago Afonso
-date: 2025-03-01
+date: 2025-03-11
 subtitle: Aula 5 - Introdução ao R para Economistas
 title: Ferramentas de Apoio à Economia
 toc-title: Table of contents
