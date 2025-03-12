@@ -1,0 +1,87 @@
+---
+title: "Ferramentas de Apoio à Economia - Aula 4"
+subtitle: "Juntar dados - Excel"
+author: "Tiago Afonso"
+date: "6 de Março de 2025"
+format: html
+toc: true
+---
+
+# 1. Introdução
+
+Juntar dados é uma tarefa comum na análise de dados. No Excel, existem várias funções que permitem juntar dados de diferentes formas.
+
+## Conceitos de bases de dados
+
+- **Tabela**: Uma tabela é um conjunto de dados organizados em linhas e colunas. Cada linha representa um registo e cada coluna representa uma variável.
+- **Registo**: é uma linha de uma tabela que contém os valores de uma entidade.
+- **Variável**: Uma variável é uma característica ou atributo de uma entidade.
+- **Base de Dados**: Uma base de dados é um conjunto de tabelas relacionadas entre si por chaves comuns.
+- **Consulta**: Uma consulta é uma operação que permite extrair dados de uma base de dados.
+- **Chave primária/*primary key***: Uma chave primária é um campo que identifica unicamente cada registo numa tabela.
+- **Chave externa**: Uma chave estrangeira é um campo numa tabela que estabelece uma relação com a chave primária de outra tabela.
+- **Relação**: Uma relação é uma associação entre duas tabelas com base numa chave comum.
+
+## Formas de Juntar Dados
+
+### Tipos de Join
+
+- **Inner Join**: Devolce apenas os dados que têm correspondência em ambas as tabelas.
+- **Left Join (ou Left Outer Join)**: Devolve todos os dados da tabela à esquerda e os registros correspondentes da tabela à direita. Se não houver correspondência, os resultados da tabela à direita serão nulos.
+- **Right Join (ou Right Outer Join)**: Devolve todos os registros da tabela à direita e os registros correspondentes da tabela à esquerda. Se não houver correspondência, os resultados da tabela à esquerda serão nulos.
+- **Full Join (ou Full Outer Join)**: Devolve todos os registros quando há uma correspondência em uma das tabelas. Se não houver correspondência, os resultados serão nulos para a tabela que não tem correspondência.
+
+
+# 2. Funções para juntar Dados
+
+- juntar dados - O processo de combinar dados de diferentes fontes em uma única tabela.
+
+- agregar dados - O processo de resumir dados em uma única tabela. A tabela agregada tem menos linhas do que as tabelas originais.
+
+
+## PROCV (VLOOKUP)
+
+A prinicipal função para juntar dados no Excel é a função `PROCV`. Esta função permite procurar um valor numa tabela e devolver um valor correspondente numa coluna específica. 
+
+Síntaxe: `PROCV(valor_procurado; tabela_matriz; núm_índice_coluna; [procurar_intervalo])`
+
+*nota:* o `[]` indica que o argumento é opcional.
+
+A principal vantagem da função `PROCV` é a sua simplicidade e facilidade de utilização. Enquanto que a função `PROCV` é muito útil, tem algumas limitações, como a incapacidade de procurar valores à esquerda e a necessidade de especificar o número da coluna onde está o valor procurado. De forma a suprimir esta última limitação, é possível utilizar a função `CORRESP` para encontrar o número da coluna automaticamente (sabendo o nome da coluna). A função `PROCV` também pode ser utilizada com intervalos, últumo argumento da função, que permite procurar valores aproximados.
+
+## PROCX (XLOOKUP)
+
+A função `PROCX` é uma função mais recente que a função `PROCV` e que resolve algumas das limitações da função `PROCV`. A função `PROCX` permite procurar um valor numa tabela e devolver um valor correspondente numa coluna específica. Permite também procurar valores à esquerda e procurar valores em qualquer direção (horizontal ou vertical), o que é uma vantagem em relação à função `PROCV` ou `PROCH`.
+
+Síntaxe: `PROCX(valor_procurado; intervalo_procura; intervalo_retorno; [se_não_encontrado]; [correspondência]; [procurar_intervalo])`
+
+## ÍNDICE (INDEX)
+
+A função `´INIDICE` devolve um valor numa tabela com base no número da linha e da coluna. A função `ÍNDICE` é muito útil para juntar dados de diferentes tabelas.
+
+Síntaxe: `ÍNDICE(matriz; núm_linha; [núm_coluna])`
+
+## CORRESP (MATCH)
+
+A função `CORRESP` devolve a posição de um valor numa tabela. A função `CORRESP` é muito útil para encontrar o número da coluna ou linhas onde está o valor procurado.
+
+Síntaxe: `CORRESP(valor_procurado; matriz_procura; [tipo_correspondência])`
+
+## ÍNDICE + CORRESP
+
+A função `ÍNDICE` em combinação com a função `CORRESP` é muito útil para juntar dados de diferentes tabelas. A função `CORRESP` encontra o número da coluna onde está o valor procurado e a função `ÍNDICE` devolve o valor correspondente.
+
+Síntaxe para uma chave primária: `ÍNDICE(matriz; CORRESP(valor_procurado; matriz_procura; [tipo_correspondência]); [núm_coluna])`
+
+Com as funções anteriores também é possível juntar dados de diferentes tabelas com base em chaves primárias compostas por uma coluna. Quando a chave primária é composta por duas colunas (por exemplo dados em painel, país e ano), é necessário utilizar a função `ÍNDICE` com a função `CORRESP` com um pequeno ajuste. As duas condições são passadas como argumentos da função `CORRESP`. 
+
+Considerando a folha de cálculo `Dados1` com as colunas `País` e `Ano` como chaves primárias, em que o objetivo é juntar os dados da folha de cálculo `Dados2` com as colunas `País` e `Ano` como chaves primárias, a fórmula seria a seguinte:
+
+ `ÍNDICE(Dados2; CORRESP(1;(Dados2$colunaAno=Dados1$célulaAno)*(Dados2$colunaPáís=Dados1$célulaPaís); [tipo_correspondência]); CORRESP(valor_procurado2; matriz_procura2; [tipo_correspondência]))`
+
+## XLOOKUP + XLOOKUP
+
+
+
+A utilização da função `XLOOKUP` em combinação com a função `XLOOKUP` é muito útil para juntar dados de diferentes tabelas considerando duas colunas como chave primária. A função `XLOOKUP` encontra o número da linha onde está o valor procurado e a função `XLOOKUP` devolve o valor correspondente.
+Por exemplo: `XLOOKUP(valor_procurado1&valor_procurado2; matriz_procura1&matriz_procura2; matriz_retorno; [se_não_encontrado]; [correspondência]; [procurar_intervalo])`
