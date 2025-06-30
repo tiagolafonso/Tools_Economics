@@ -1,7 +1,5 @@
 # Exame Normal de Ferramentas de Apoio à Economia - 2024/2025
 
-# Índice
-
 1. [Grupo I Excel – 4.0 valores](#grupo-i-excel-40-valores)  
     1.1. [Cálculo de variação em unidades e %](#1-calcule-variação-em-unidades-e-em-respetivamente-para-as-variáveis-x-e-y-do-ficheiro-grupoi_1xlsx-1-valor)  
     1.2. [Utilização de fórmulas para juntar dados](#2-recorrendo-às-fórmulas-procv-procx-procvcorresp-sendprocv-ou-índicecorresp-transpor-junte-os-dados-de-todas-as-folhas-do-grupoi_2xlsx-3-valores)  
