@@ -1,4 +1,24 @@
-# Ferramentas de Apoio à Economia 2024/2025 - Exame Época Normal
+# Exame Normal de Ferramentas de Apoio à Economia - 2024/2025
+
+# Índice
+
+1. [Grupo I Excel – 4.0 valores](#grupo-i-excel-40-valores)  
+    1.1. [Cálculo de variação em unidades e %](#1-calcule-variação-em-unidades-e-em-respetivamente-para-as-variáveis-x-e-y-do-ficheiro-grupoi_1xlsx-1-valor)  
+    1.2. [Utilização de fórmulas para juntar dados](#2-recorrendo-às-fórmulas-procv-procx-procvcorresp-sendprocv-ou-índicecorresp-transpor-junte-os-dados-de-todas-as-folhas-do-grupoi_2xlsx-3-valores)  
+
+2. [Grupo II R – 2.6 valores](#grupo-ii-r--26-valores)  
+    2.1. [Cálculo da média da variável W](#1-introduza-a-seguinte-tabela-no-ambiente-do-r)  
+    2.2. [Juntar dados de ficheiros](#2-junte-os-dados-dos-ficheiros-grupoii_21xlsx-e-grupoii_22xlsx-2-valores)  
+
+3. [Grupo III Power BI – 8.4 valores](#grupo-iii-power-bi-84-valores)  
+    3.1. [Limpeza e junção de dados](#1-limpe-e-junte-os-dados-dos-ficheiros-com-o-prefixo-grupoiii_1-4-valores)  
+    3.2. [Construção de dashboard](#2-construa-um-dashboard-sem-juntar-as-consultas-e-sem-colunas-calculadas-utilizando-o-ficheiro-grupoiii_2xlsx-de-forma-a-extrair-os-seguintes-insights-44-valores)  
+
+4. [Grupo IV – 5 valores](#grupo-iv--5-valores)  
+    4.1. [Classificação de vendas](#1a-1-val-classifique-as-vendas-como-venda-estratégica-ou-venda-comum-utilizando-a-função-see)  
+    4.2. [Formatação condicional](#1b-075-val-aplique-a-formatação-condicional-na-coluna-sales_amount)  
+    4.3. [Cálculo com SOMA.SE](#1c-075-val-utilize-a-função-somase-para-calcular-o-número-total-de-vendas-sales_amount)  
+    4.4. [Mini dashboard](#1d-25-val-elabore-um-mini-dashboard-com-a-informação-da-base-de-dados-da-folha-de-cálculo-denominada-por-raw_data)  
 
 # **Grupo I Excel– 4.0 valores**
 
@@ -38,9 +58,11 @@ Calcule a média da variável W, em que W=(Y-X) / 2 . (0.6 valores)
 11) Podemos identificar os produtos que, apesar de não serem os mais vendidos em volume, contribuem significativamente para a margem de lucro total devido à sua alta rentabilidade?  
 12) Há alguma disparidade regional (por Estado ou Cidade) no custo de produção ou no preço de venda dos produtos que possa indicar diferentes estratégias de mercado ou custos logísticos?  
 13) Criar uma medida dinâmica com “idade média”, “total de vendas” e “Unidades vendidas”.  
+14) 
 
 **Store**  
 	
+
 * Product ID (ID do Produto): Código único que identifica cada produto individualmente 	  
 * Product Name (Nome do Produto): Nome descritivo do produto  
 * Price (Preço): Preço de venda ao público de cada unidade do produto.  
@@ -65,7 +87,7 @@ Calcule a média da variável W, em que W=(Y-X) / 2 . (0.6 valores)
 * Customer ID (ID do Cliente): Código único que identifica o cliente associado a este registo de comprador
 
 # **Grupo IV – 5 valores**  
-**1\.**	1\. O ficheiro Excel denominado por “Sales Dataset” está organizado por 2 folhas de cálculo: 
+## 1	1\. O ficheiro Excel denominado por “Sales Dataset” está organizado por 2 folhas de cálculo:
 
 *  “Raw\_Data” contém os dados principais relativos às vendas;  
 *  “Raw\_Data\_Dashboard” contém os dados destinados à construção de um “mini” dashboard com base nos elementos solicitados na alínea d). 
