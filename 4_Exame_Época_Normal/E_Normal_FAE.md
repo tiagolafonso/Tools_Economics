@@ -2,14 +2,14 @@
 
 # **Grupo I Excel– 4.0 valores**
 
-1. Calcule variação em unidades e em %, respetivamente, para as variáveis “x” e “y” do ficheiro GrupoI\_1.xlsx (*1 valor*)  
-2. Recorrendo às fórmulas PROCV, PROCX, PROCV+CORRESP, SEND+PROCV ou ÍNDICE+CORRESP, TRANSPOR junte os dados de todas as folhas do GrupoI\_2.xlsx. (*3 valores*)
+## 1. Calcule variação em unidades e em %, respetivamente, para as variáveis “x” e “y” do ficheiro GrupoI\_1.xlsx (*1 valor*)  
+## 2. Recorrendo às fórmulas PROCV, PROCX, PROCV+CORRESP, SEND+PROCV ou ÍNDICE+CORRESP, TRANSPOR junte os dados de todas as folhas do GrupoI\_2.xlsx. (*3 valores*)
 
 # **Grupo II R \- 2.6 valores**
 
 Nota: utilize “**\#**” para documentar/identificar devidamente todo o código escrito.
 
-1. Introduza a seguinte tabela no ambiente do R:
+## 1. Introduza a seguinte tabela no ambiente do R:
 
 | X | 7 | 10 | 6 | 9 | 5 |
 | :---- | :---: | :---: | :---: | :---: | :---: |
@@ -18,31 +18,29 @@ Nota: utilize “**\#**” para documentar/identificar devidamente todo o códig
 
 Calcule a média da variável W, em que W=(Y-X) / 2 . (0.6 valores)
 
-2. Junte os dados dos ficheiros grupoII\_21.xlsx e grupoII\_22.xlsx (*2 valores*)
+## 2. Junte os dados dos ficheiros grupoII\_21.xlsx e grupoII\_22.xlsx (*2 valores*)
 
 # **Grupo III Power BI– 8.4 valores**
 
-1. Limpe e junte os dados dos ficheiros com o prefixo grupoIII\_1 (4 valores)  
-2. Construa um dashboard, ***sem juntar as consultas e sem colunas calculadas***, utilizando o ficheiro grupoIII\_2.xlsx de forma a extrair os seguintes insights (4,4 valores):
+## 1. Limpe e junte os dados dos ficheiros com o prefixo grupoIII\_1 (4 valores)  
+## 2. Construa um dashboard, ***sem juntar as consultas e sem colunas calculadas***, utilizando o ficheiro grupoIII\_2.xlsx de forma a extrair os seguintes insights (4,4 valores):
 
-1) Qual é o produto com maior volume de vendas em unidades? E qual é o produto que gera maior receita total?  
-2) Qual a margem de lucro por produto? Qual o produto mais rentável em termos de margem?  
-3) Existem padrões sazonais nas vendas? Qual o mês ou trimestre com maior volume de vendas e/ou receita?  
-4) Qual o desempenho de vendas (unidades e receita) de cada loja? Há lojas com performance significativamente diferente?  
-5) Quem são os nossos clientes mais frequentes ou que gastam mais?  
-6) Qual a distribuição geográfica dos nossos clientes? Em que cidades ou distritos temos mais clientes?  
-7) Há uma relação entre a idade do comprador e o tipo de produto ou o valor total que compram?  
-8) Clientes de que distritos tendem a comprar mais ou têm um valor médio de compra mais alto?  
-9) Existem produtos que, apesar de terem um alto custo de produção, são vendidos a um preço baixo, impactando negativamente a margem?  
-10) Qual é a percentagem de clientes que fizeram mais de uma compra (clientes recorrentes)? E o que distingue estes clientes dos que fizeram apenas uma compra?  
-11) Podemos identificar os produtos que, apesar de não serem os mais vendidos em volume, contribuem significativamente para a margem de lucro total devido à sua alta rentabilidade?  
-12) Há alguma disparidade regional (por Estado ou Cidade) no custo de produção ou no preço de venda dos produtos que possa indicar diferentes estratégias de mercado ou custos logísticos?  
-13) Criar uma medida dinâmica com “idade média”, “total de vendas” e “Unidades vendidas”.  
-14) 
+### 1) Qual é o produto com maior volume de vendas em unidades? E qual é o produto que gera maior receita total?  
+### 2) Qual a margem de lucro por produto? Qual o produto mais rentável em termos de margem?  
+### 3) Existem padrões sazonais nas vendas? Qual o mês ou trimestre com maior volume de vendas e/ou receita?  
+### 4) Qual o desempenho de vendas (unidades e receita) de cada loja? Há lojas com performance significativamente diferente?  
+### 5) Quem são os nossos clientes mais frequentes ou que gastam mais?  
+### 6) Qual a distribuição geográfica dos nossos clientes? Em que cidades ou distritos temos mais clientes?  
+### 7) Há uma relação entre a idade do comprador e o tipo de produto ou o valor total que compram?  
+### 8) Clientes de que distritos tendem a comprar mais ou têm um valor médio de compra mais alto?  
+### 9) Existem produtos que, apesar de terem um alto custo de produção, são vendidos a um preço baixo, impactando negativamente a margem?  
+### 10) Qual é a percentagem de clientes que fizeram mais de uma compra (clientes recorrentes)? E o que distingue estes clientes dos que fizeram apenas uma compra?  
+### 11) Podemos identificar os produtos que, apesar de não serem os mais vendidos em volume, contribuem significativamente para a margem de lucro total devido à sua alta rentabilidade?  
+### 12) Há alguma disparidade regional (por Estado ou Cidade) no custo de produção ou no preço de venda dos produtos que possa indicar diferentes estratégias de mercado ou custos logísticos?  
+### 13) Criar uma medida dinâmica com “idade média”, “total de vendas” e “Unidades vendidas”.  
 
 **Store**  
 	
-
 * Product ID (ID do Produto): Código único que identifica cada produto individualmente 	  
 * Product Name (Nome do Produto): Nome descritivo do produto  
 * Price (Preço): Preço de venda ao público de cada unidade do produto.  
