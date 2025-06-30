@@ -1,7 +1,4 @@
-Nº: \_\_\_\_\_\_\_\_Nome:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-  
-\- Se o ficheiro for demasiado grande para submeter pelo moodle \-\> Enviar pelo Teams por mensagem ou email com o assunto “FAE Exame\_normal” para [tiago.afonso@ubi.pt](mailto:tiago.afonso@ubi.pt)
+# Ferramentas de Apoio à Econommia 2024/2025 - Exame Época Normal
 
 # **Grupo I Excel– 4.0 valores**
 
