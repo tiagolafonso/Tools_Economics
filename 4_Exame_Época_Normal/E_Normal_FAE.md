@@ -1,4 +1,4 @@
-# Ferramentas de Apoio à Econommia 2024/2025 - Exame Época Normal
+# Ferramentas de Apoio à Economia 2024/2025 - Exame Época Normal
 
 # **Grupo I Excel– 4.0 valores**
 
