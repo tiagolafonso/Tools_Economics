@@ -1,0 +1,30 @@
+#bibliotecas
+
+library(tidyverse)
+library(readxl)
+
+
+#Funções
+#read_xlsx - importar dados
+#read.csv - importar dados
+#count - contar
+#filter - filtrar
+#select - selecionar
+#mutate - criar novas variáveis
+#group_by - agrupar
+#summarise - sumariar
+#arrange  - ordenar
+#slice - selecionar linhas
+#rename - alterar nome
+#case_when
+#pivot_longer 
+#pivot_wider
+#left_join
+#as.numeric
+#? - helpfile
+#head
+#summary 
+
+
+POWER BI
+SUM, SUMX, COUNT (contar), DISTINCTCOUNT (contar valores únicos), AVERAGE (média), AVERAGEX), SWITCH
